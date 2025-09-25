@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  padding: 50px;
+  overflow: hidden;;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 1;
+  margin-left: 20%;
+  scale: 150%;
+}
+
+.hero .vanta-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero .content h2 {
+  font-family: Leckerli One, cursive;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hero .content h1 {
+  font-family: Leckerli One, cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+
+.hero .content h1 span {
+  font-family: leckerli One, cursive;
+  font-size: 3.5rem;
+}
+
+.hero .content p {
+  font-family: Handlee, cursive;
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
+}
+
+
+.auto-type {
+  font-family: Handlee, cursive;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+  color: #ff4ecd;
+}
+
+/* Social Icons */
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff0066;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  padding: 10px 25px;
+  background: linear-gradient(#000, #000) padding-box,
+              linear-gradient(90deg, red, purple, blue) border-box;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: SF Pro Text, sans-serif;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #ff4ecd;
+}
+
+/* About Section */
+.About {
+  padding: 50px;
+  background: #fff;
+  color: #000;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.about-content {
+  flex: 2;
+}
+
+.about-content h4 {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.about-content h2 {
+  font-family: Leckerli One, cursive;
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.about-content p {
+  font-family: Handlee, cursive;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #cc0000;
+}
