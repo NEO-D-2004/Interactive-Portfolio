@@ -11,6 +11,30 @@ body {
   color: #fff;
 }
 
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #ddd;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -106,7 +130,7 @@ body {
   border: 2px solid transparent;
   border-radius: 30px;
   padding: 10px 25px;
-  background: linear-gradient(#000, #000) padding-box,
+  background: linear-gradient(#000000, #000) padding-box,
               linear-gradient(90deg, red, purple, blue) border-box;
 }
 
@@ -185,5 +209,9 @@ body {
 }
 
 .btn:hover {
-  background: #cc0000;
+  background: #000000;
 }
+
+/* Dark Mode */
+body.dark-mode {
+  background: #000;

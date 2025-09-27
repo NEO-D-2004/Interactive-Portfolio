@@ -1,4 +1,4 @@
-VANTA.GLOBE({
+const vantaEffect = VANTA.GLOBE({
   el: "#hero",
   mouseControls: true,
   touchControls: true,
@@ -29,4 +29,26 @@ const typed = new Typed('.auto-type', {
             backSpeed: 90,
             loop: true
             
+});
+
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        vantaEffect.setOptions({
+            color: 0x0,
+            backgroundColor: 0xffffff
+        });
+    } else {
+        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        vantaEffect.setOptions({
+            color: 0xffffff,
+            backgroundColor: 0x0
+        });
+    }
 });
