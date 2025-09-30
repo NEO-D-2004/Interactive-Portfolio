@@ -44,3 +44,36 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll(".about-container");
 hiddenElements.forEach((el) => observer.observe(el));
+
+// Skill card flip animation
+const skillCards = document.querySelectorAll(".skill-card");
+
+skillCards.forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("is-flipped");
+  });
+
+  const cardInner = card.querySelector(".skill-card-inner");
+
+  card.addEventListener('mouseenter', () => {
+    if (!card.classList.contains('is-flipped')) {
+      anime({
+        targets: cardInner,
+        rotateY: '180deg',
+        duration: 200,
+        easing: 'easeInOutSine'
+      });
+    }
+  });
+
+  card.addEventListener('mouseleave', () => {
+    if (!card.classList.contains('is-flipped')) {
+      anime({
+        targets: cardInner,
+        rotateY: '0deg',
+        duration: 200,
+        easing: 'easeInOutSine'
+      });
+    }
+  });
+});
