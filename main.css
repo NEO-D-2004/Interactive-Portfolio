@@ -11,30 +11,6 @@ body {
   color: #fff;
 }
 
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.theme-toggle-btn:hover {
-  background-color: #ddd;
-}
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -64,13 +40,13 @@ body {
 }
 
 .hero .content h2 {
-  font-family: Leckerli One, cursive;
+  font-family: Electrolize, sans-serif;
   font-size: 2rem;
   font-weight: 600;
 }
 
 .hero .content h1 {
-  font-family: Leckerli One, cursive;
+  font-family: Electrolize, sans-serif;
   font-size: 3rem;
   font-weight: 700;
   margin: 10px 0;
@@ -179,13 +155,13 @@ body {
 }
 
 .about-content h4 {
-  font-family: 'Courier New', monospace;
+  font-family: Leckerli One, cursive;
   font-size: 1.2rem;
   color: #555;
 }
 
 .about-content h2 {
-  font-family: Leckerli One, cursive;
+  font-family: Electrolize, sans-serif;
   font-size: 2.5rem;
   margin: 10px 0;
 }
@@ -212,6 +188,15 @@ body {
   background: #000000;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background: #000;
+/* Animation */
+.about-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+  will-change: opacity, transform;
+}
+
+.about-container.show-animate {
+  opacity: 1;
+  transform: translateY(0);
+}

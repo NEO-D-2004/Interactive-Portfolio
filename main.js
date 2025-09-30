@@ -1,4 +1,4 @@
-const vantaEffect = VANTA.GLOBE({
+VANTA.GLOBE({
   el: "#hero",
   mouseControls: true,
   touchControls: true,
@@ -31,24 +31,16 @@ const typed = new Typed('.auto-type', {
             
 });
 
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        vantaEffect.setOptions({
-            color: 0x0,
-            backgroundColor: 0xffffff
-        });
+// Animation on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show-animate");
     } else {
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        vantaEffect.setOptions({
-            color: 0xffffff,
-            backgroundColor: 0x0
-        });
+      entry.target.classList.remove("show-animate");
     }
+  });
 });
+
+const hiddenElements = document.querySelectorAll(".about-container");
+hiddenElements.forEach((el) => observer.observe(el));
