@@ -49,31 +49,35 @@ hiddenElements.forEach((el) => observer.observe(el));
 const skillCards = document.querySelectorAll(".skill-card");
 
 skillCards.forEach(card => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("is-flipped");
-  });
-
   const cardInner = card.querySelector(".skill-card-inner");
 
   card.addEventListener('mouseenter', () => {
-    if (!card.classList.contains('is-flipped')) {
-      anime({
-        targets: cardInner,
-        rotateY: '180deg',
-        duration: 200,
-        easing: 'easeInOutSine'
-      });
-    }
+    anime({
+      targets: card,
+      scale: 1.2,
+      duration: 800,
+      easing: 'easeOutSine'
+    });
+    anime({
+      targets: cardInner,
+      rotateY: '180deg',
+      duration: 400,
+      easing: 'easeInOutSine'
+    });
   });
 
   card.addEventListener('mouseleave', () => {
-    if (!card.classList.contains('is-flipped')) {
-      anime({
-        targets: cardInner,
-        rotateY: '0deg',
-        duration: 200,
-        easing: 'easeInOutSine'
-      });
-    }
+    anime({
+      targets: card,
+      scale: 1.0,
+      duration: 800,
+      easing: 'easeInSine'
+    });
+    anime({
+      targets: cardInner,
+      rotateY: '0deg',
+      duration: 200,
+      easing: 'easeInOutSine'
+    });
   });
 });

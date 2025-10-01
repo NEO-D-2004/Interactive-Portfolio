@@ -281,3 +281,71 @@ body {
   font-size: 1.2rem;
   margin: 10px 0;
 }
+
+/* Projects Section */
+.Projects {
+  padding: 50px 50px 80px;
+  background: #fff;
+  text-align: center;
+  color: #000;
+}
+
+.projects-title {
+  font-family: Electrolize, sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.project-image {
+  background: #f0f0f0;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.project-title {
+  font-family: Electrolize, sans-serif;
+  font-size: 1.2rem;
+}
+
+.btn-github {
+  background: #000;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-github:hover {
+  background: #333;
+}
+
+.view-all {
+  font-family: Electrolize, sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
