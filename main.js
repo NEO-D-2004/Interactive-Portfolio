@@ -81,3 +81,74 @@ skillCards.forEach(card => {
     });
   });
 });
+
+// Project Modal
+document.addEventListener('DOMContentLoaded', () => {
+  // Contact Form
+  (function(){
+    emailjs.init("w7t25PbppwKbFSxbQ");
+  })();
+
+  const contactForm = document.querySelector('.contact-form form');
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    emailjs.send("service_c2ks5y7", "template_ryj95x9", {
+      name: this.name.value,
+      email: this.email.value,
+      message: this.message.value
+    })
+    .then(function() {
+      alert('Message sent successfully!');
+      contactForm.reset();
+    }, function(error) {
+      alert('Message not sent.');
+    });
+  });
+
+  const projectCards = document.querySelectorAll('.project-card');
+  const modal = document.getElementById('project-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+  const modalLink = document.getElementById('modal-link');
+  const closeButton = document.querySelector('.close-button');
+
+  const projectData = {
+    'Focalpoint Studio': {
+      description: 'A photography studio website with a gallery and booking form.',
+      link: '#'
+    },
+    'Campus Expert': {
+      description: 'A platform for students to connect with campus experts.',
+      link: '#'
+    },
+    'AiEdMate': {
+      description: 'An AI-powered educational tool for students.',
+      link: '#'
+    }
+  };
+
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('.project-title').textContent;
+      const data = projectData[title];
+
+      if (data) {
+        modalTitle.textContent = title;
+        modalDescription.textContent = data.description;
+        modalLink.href = data.link;
+        modal.style.display = 'block';
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
